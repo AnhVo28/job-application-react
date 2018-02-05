@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+  </head>
+  <body class="text-center">
+  <header>
+	    <h1>Let's talk</h1>
+	    <p>Think you have what it takes? Show us.</p>
+ </header>
+
+  <form class="" action="index.html" method="post">
+
+
+  <section class="personal">
+      <div class="container">
+        <h2 class="title">1.Personal information</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <input type="text" name="name" value="" placeholder="Full name*" required pattern="^[A-Za-z]{2,}(\s[A-Za-z]+)+$">
+            <input type="text" name="email" value="" placeholder="Email*" pattern="^\w+\.?\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
+            <div id="feedback">
+
+            </div>
+            <input type="email" name="re-email" value="" placeholder="Re-enter email*" required>
+          </div>
+          <div class="col-md-4">
+            <input type="text" name="phone" value="" placeholder="Enter like this 046541192" required min="1" max="16" pattern="^(((\+|00)358)|0)\d{9}$">
+          </div>
+          <div class="col-md-12">
+            <input type="text" name="address" value="" placeholder="Address*" required>
+          </div>
+
+          <div class="col-md-3"><input type="text" placeholder="City*" pattern="\b[A-Za-z]{2,}(\s[A-Za-z]+)*\b" required></div>
+          <div class="col-md-3"><input type="text" placeholder="State" pattern="[A-Za-z]{2,}(\s[A-Za-z]+)*"></div>
+          <div class="col-md-3"><input type="text" placeholder="Country/Region*" required ></div>
+          <div class="col-md-3"><input type="text" placeholder="Zip/Postal code" required pattern="^\d{5}$"></div>
+
+          <div class="col-md-12">
+            <input type="text" name="think" value="" placeholder="How did you hear about us">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+    </div>
+  </section>
+  <section class="skill">
+    <section class="role">
+      <div class="container">
+        <h2 class="title">2. Skills and location</h2>
+        <p class="text-left">Which is your primary design discipline</p>
+        <div class="row">
+
+
+
+          <div class="col-md-3">
+            <div class="job-box">
+
+              <input type="radio" name="design-discipline" id="design-research" value="Design Research" checked>
+              <label for="design-research">Design Research</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="job-box">
+
+              <input type="radio" name="design-discipline" id="visual-design" value="Visual Design">
+              <label for="visual-design">Visual Design</label>
+
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="job-box">
+
+              <input type="radio" name="design-discipline" id="ux-design" value="UX Design">
+              <label for="ux-design">UX Design</label>
+            </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="job-box">
+
+              <input type="radio" name="design-discipline" id="front-end" value="Front End Dev">
+              <label for="front-end">Front End Dev</label>
+            </div>
+
+          </div>
+
+          <section class="question">
+            <div class="container">
+
+              <div class="row">
+
+
+                <div class="col-md-6 skill  text-left">
+                  <section class="job-q" id="job-skill">
+
+                    <p>Do you have experience with any other discipline?</p>
+                    <div class="q-box">
+
+                      <input type="checkbox" id="c1" value="Visual design">
+                      <label for="c1"> Visual design</label>
+                      <span>&#10008;</span>
+                    </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" id="c2" value="UX design">
+                    <label for="c2"> UX design </label>
+                    <span>&#10008;</span>
+                  </br>
+                </div>
+                <div class="q-box">
+
+                  <input type="checkbox" id="c3" value="Front-end Development">
+                  <label for="c3"> Front-end Developlemt  </label>
+                  <span>&#10008;</span>
+                </br>
+              </div>
+                  </section>
+
+
+                    <label for="add">Add more:</label>
+                    <input type="text" name="add" id="add" value="">
+                    <button id="btn-add" class="btn btn-primary" type="button" name="button">Add</button>
+
+                </div>
+                <div class="col-md-6 job-q text-left">
+                  <p>Where are you interested in working?* <span>You must be legally authozied to work without visa sponsorship in the location(s) you choose.</span> </p>
+
+                  <div class="q-box">
+
+                    <input type="checkbox" value="texas" id="texas">
+                    <label for="texas"> Austin, Texas</label>
+                    <span>&#10008;</span>
+                    <br>
+                  </div>
+
+                  <div class="q-box">
+
+                    <input type="checkbox" value="newyork" id="newyork">
+                    <label for="newyork"> New York, Noew York</label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="toronto" id="toronto">
+                    <label for="toronto"> Toronto, Canada</label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="china" id="china">
+                    <label for="china"> Shanghai, China</label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="dublin" id="dublin">
+                    <label for="dublin"> Dubin, Ireland</label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="hursley" id="hursley">
+                    <label for="hursley"> Hursley, United Kingdom </label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="germany" id="germany">
+                    <label for="germany"> Boeblingen, Germany</label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                  <div class="q-box">
+
+                    <input type="checkbox" value="somewhere" id="somewhere">
+                    <label for="somewhere"> Somewhere else </label>
+                    <span>&#10008;</span>
+                  </br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="portfolio">
+    <div class="container">
+
+      <h2 class="title">3. Portfolio</h2>
+      <p class="text-left">Prove you're IBM's next great designer by showing us who you are. What you've have done. How you think. Tell us your story.</p>
+      <input type="link" class="port" placeholder="Portfolio link*" required>
+      <textarea name="" id="" cols="15" rows="5" placeholder="Anything else (another link, availability, etc.)"></textarea>
+      <button class=" text-left submit btn btn-primary ">Submit</button>
+    </div>
+  </section>
+
+  </form>
+
+
+<script type="text/javascript" src="main.js">
+
+</script>
+  </body>
+</html>

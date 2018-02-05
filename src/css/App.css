@@ -1,0 +1,200 @@
+.App {
+  color: white;
+  background: #454e57;
+  min-height: 100vh;
+}
+
+.personal button, .portfolio button {
+  margin-top: 1.5em;
+}
+
+
+.Nav li {
+  margin-top: 1em;
+  text-decoration: none;
+  list-style-type: none;
+  display: inline-block;
+
+}
+
+.Nav li a {
+  color: white;
+  transition: 0.1s ease-out;
+}
+
+.Nav li a:hover  {
+  font-size:1.1em;
+}
+
+.Nav li a.active {
+  font-size:1.2em;
+  text-decoration: underline;
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.notFound {
+  padding-top: 4em;
+}
+
+
+input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px #d9d9d9;
+  margin-top: 20px;
+  background: transparent;
+  color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+
+input:focus:invalid {
+  border-bottom: solid 1px salmon;
+  background: url("img/icons8-high-priority-40.png") no-repeat 95% 50%;
+  background-size: 25px;
+}
+
+input[type="checkbox"] {
+  background: transparent ;
+  border: 1px solid #d9d9d9  ;
+  display: inline-block;
+  width: auto;
+}
+
+
+input:focus:valid {
+  background: url("img/icons8-checkmark-96.png") no-repeat 95% 50%;
+  background-size: 25px;
+}
+
+input[required]:after { content:"*"; }
+
+
+input:focus {
+   outline: none;
+}
+
+.title {
+  text-align: left;
+  padding-bottom: 1em;
+  border-bottom: 2px solid #00b2fa;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.question {
+  margin-top: 2em;
+}
+
+.job-box input {
+  opacity: 0;
+  width: 0;
+}
+
+.job-box input + label {
+  border: 1px solid white;
+  padding: 10px;
+  width: 100%;
+}
+
+.job-box input:checked + label {
+  background: #00b2fa;
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  color:white;
+  margin-top: 1em;
+}
+
+/* change the css of checkbox */
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+  border: 1px solid white;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+
+  width: 16px;
+}
+
+/* end change the css checkbox */
+
+input[type="checkbox"] + label:after {
+  transition: 0.15s ease-out;
+}
+
+.job-q span {
+  transition: 0.15s ease-out;
+}
+
+.q-box span {
+  display: none;
+  transition: 0.15s ease-out;
+  cursor: pointer;
+}
+
+.q-box:hover span {
+  display: inline-block;
+
+}
+/* label:hover + span {
+  display: inline-block;
+} */
+/* .job-q span:hover {
+  cursor: pointer;
+  font-size: 24px;
+
+} */
+
+ /* input[type="checkbox"]:hover + label:after {
+  content: " \274c";
+  font-size: 5px;
+  color: red;
+} */
+
+input[type="checkbox"]:checked + label:before {
+  background: #fff;
+  color: #333;
+  content: "\2713";
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+/* button add */
+
+.skill button {
+  margin-top: 1em;
+}
+
+/* end the button add */
