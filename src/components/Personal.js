@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withFormik } from "formik";
+import validator from "validator";
 
 // Our inner form component which receives our form's state and updater methods as props
 const InnerForm = ({
@@ -26,6 +27,7 @@ const InnerForm = ({
               onBlur={handleBlur}
               value={values.fullName}
               placeholder="Full name*"
+              className={errors.fullName && touched.fullName ? "error" : " "}
             />
             {touched.fullName &&
               errors.fullName && <div>{errors.fullName}</div>}
@@ -36,7 +38,7 @@ const InnerForm = ({
               onBlur={handleBlur}
               value={values.email}
               placeholder="Email*"
-              required
+              className={errors.email && touched.email ? "error" : " "}
             />
             {touched.email && errors.email && <div>{errors.email}</div>}
             <input
@@ -46,8 +48,10 @@ const InnerForm = ({
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Re-enter email*"
-              required
+              className={errors.reEmail && touched.reEmail ? "error" : " "}
             />
+            {touched.reEmail && errors.reEmail && <div>{errors.reEmail}</div>}
+
             <div id="feedback" />
           </div>
           <div class="col-md-4">
@@ -58,7 +62,7 @@ const InnerForm = ({
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Enter like this 046541192"
-              required
+              className={errors.phone && touched.phone ? "error" : " "}
             />
             {touched.phone && errors.phone && <div>{errors.phone}</div>}
           </div>
@@ -70,7 +74,7 @@ const InnerForm = ({
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Address*"
-              required
+              className={errors.address && touched.address ? "error" : " "}
             />
             {touched.address && errors.address && <div>{errors.address}</div>}
           </div>
@@ -83,7 +87,7 @@ const InnerForm = ({
               value={values.city}
               onChange={handleChange}
               onBlur={handleBlur}
-              required
+              className={errors.city && touched.city ? "error" : " "}
             />
             {touched.city && errors.city && <div>{errors.city}</div>}
           </div>
@@ -106,8 +110,9 @@ const InnerForm = ({
               value={values.country}
               onChange={handleChange}
               onBlur={handleBlur}
-              required
+              className={errors.country && touched.country ? "error" : " "}
             />
+            {touched.country && errors.country && <div>{errors.country}</div>}
           </div>
           <div class="col-md-3">
             <input
@@ -167,10 +172,34 @@ const PersonalForm = withFormik({
     const errors = {};
     if (!values.email) {
       errors.email = "Required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
+    } else if (!validator.isEmail(values.email)) {
       errors.email = "Invalid email address";
+    }
+
+    if (values.reEmail !== values.email) {
+      errors.reEmail = "These email don't match. Try again?";
+    }
+
+    if (!values.phone) {
+      errors.phone = "Required";
+    } else if (!validator.isMobilePhone(values.phone, "fi-FI")) {
+      errors.phone = "Invalid phone number";
+    }
+
+    if (!values.fullName) {
+      errors.fullName = "Required";
+    } else if (!validator.isAlpha(values.fullName)) {
+      errors.fullName = "It must be the letters";
+    }
+
+    if (!values.address) {
+      errors.address = "Required";
+    }
+    if (!values.city) {
+      errors.city = "Required";
+    }
+    if (!values.country) {
+      errors.country = "Required";
     }
     return errors;
   },

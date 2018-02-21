@@ -4,17 +4,16 @@
   min-height: 100vh;
 }
 
-.personal button, .portfolio button {
+.personal button,
+.portfolio button {
   margin-top: 1.5em;
 }
-
 
 .Nav li {
   margin-top: 1em;
   text-decoration: none;
   list-style-type: none;
   display: inline-block;
-
 }
 
 .Nav li a {
@@ -22,12 +21,12 @@
   transition: 0.1s ease-out;
 }
 
-.Nav li a:hover  {
-  font-size:1.1em;
+.Nav li a:hover {
+  font-size: 1.1em;
 }
 
 .Nav li a.active {
-  font-size:1.2em;
+  font-size: 1.2em;
   text-decoration: underline;
 }
 
@@ -40,7 +39,6 @@
   padding-top: 4em;
 }
 
-
 input {
   display: block;
   width: 100%;
@@ -51,40 +49,38 @@ input {
   color: white;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
-
-
-input:focus:invalid {
+input.error {
   border-bottom: solid 1px salmon;
   background: url("img/icons8-high-priority-40.png") no-repeat 95% 50%;
   background-size: 25px;
 }
 
 input[type="checkbox"] {
-  background: transparent ;
-  border: 1px solid #d9d9d9  ;
+  background: transparent;
+  border: 1px solid #d9d9d9;
   display: inline-block;
   width: auto;
 }
 
-
-input:focus:valid {
+input.done {
   background: url("img/icons8-checkmark-96.png") no-repeat 95% 50%;
   background-size: 25px;
 }
 
-input[required]:after { content:"*"; }
-
+input[required]:after {
+  content: "*";
+}
 
 input:focus {
-   outline: none;
+  outline: none;
 }
 
 .title {
@@ -117,7 +113,7 @@ input:focus {
 textarea {
   width: 100%;
   background: transparent;
-  color:white;
+  color: white;
   margin-top: 1em;
 }
 
@@ -136,7 +132,7 @@ input[type="checkbox"] + label:before {
   display: inline-block;
   font: 16px/1em sans-serif;
   height: 16px;
-  margin: 0 .25em 0 0;
+  margin: 0 0.25em 0 0;
   padding: 0;
 
   width: 16px;
@@ -160,7 +156,6 @@ input[type="checkbox"] + label:after {
 
 .q-box:hover span {
   display: inline-block;
-
 }
 /* label:hover + span {
   display: inline-block;
@@ -171,7 +166,7 @@ input[type="checkbox"] + label:after {
 
 } */
 
- /* input[type="checkbox"]:hover + label:after {
+/* input[type="checkbox"]:hover + label:after {
   content: " \274c";
   font-size: 5px;
   color: red;
@@ -188,7 +183,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 input[type="checkbox"]:focus + label::before {
-    outline: rgb(59, 153, 252) auto 5px;
+  outline: rgb(59, 153, 252) auto 5px;
 }
 
 /* button add */
