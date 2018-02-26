@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Header from "./Header";
 import Personal from "./Personal.js";
 import Skill from "./Skill.js";
@@ -15,10 +14,14 @@ const MainPage = props => {
       <Switch>
         <Route
           path={`${props.match.path}/personal/:id`}
-          render={() => <Personal />}
+          render={()=> <Personal onSubmit={values => console.log("values: ", values)} />
+          }
         />
         <Route path={`${props.match.path}/skill`} component={Skill} />
-        <Route path={`${props.match.path}/portfolio`} component={Portfolio} />
+        <Route
+          path={`${props.match.path}/portfolio`}
+          render={() => <Portfolio />}
+        />
         <Route
           path={`${props.match.path}/:id`}
           render={() => <h1 className="notFound">Page not found!</h1>}

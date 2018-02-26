@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Field, reduxForm } from "redux-form";
 
 class Skill extends React.Component {
   render() {
@@ -13,47 +13,50 @@ class Skill extends React.Component {
               <div class="row">
                 <div class="col-md-3">
                   <div class="job-box">
-                    <input
+                    <Field
                       type="radio"
                       name="design-discipline"
-                      id="design-research"
                       value="Design Research"
-                      checked
+                      id="design-research"
+                      component="input"
                     />
-                    <label for="design-research">Design Research</label>
+                    <label htmlFor="design-research">Design Research</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="job-box">
-                    <input
+                    <Field
                       type="radio"
                       name="design-discipline"
                       id="visual-design"
                       value="Visual Design"
+                      component="input"
                     />
-                    <label for="visual-design">Visual Design</label>
+                    <label htmlFor="visual-design">Visual Design</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="job-box">
-                    <input
+                    <Field
                       type="radio"
                       name="design-discipline"
                       id="ux-design"
                       value="UX Design"
+                      component="input"
                     />
-                    <label for="ux-design">UX Design</label>
+                    <label htmlFor="ux-design">UX Design</label>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="job-box">
-                    <input
+                    <Field
                       type="radio"
                       name="design-discipline"
                       id="front-end"
                       value="Front End Dev"
+                      component="input"
                     />
-                    <label for="front-end">Front End Dev</label>
+                    <label htmlFor="front-end">Front End Dev</label>
                   </div>
                 </div>
                 <section class="question">
@@ -65,34 +68,49 @@ class Skill extends React.Component {
                             Do you have experience with any other discipline?
                           </p>
                           <div class="q-box">
-                            <input
+                            <Field
+                              name="Visual design"
                               type="checkbox"
                               id="c1"
                               value="Visual design"
+                              component="input"
                             />
-                            <label for="c1"> Visual design</label>
+                            <label htmlFor="c1"> Visual design</label>
                             <span>&#10008;</span>
                             <br />
                           </div>
                           <div class="q-box">
-                            <input type="checkbox" id="c2" value="UX design" />
-                            <label for="c2"> UX design </label>
+                            <Field
+                              name="UX design"
+                              type="checkbox"
+                              id="c2"
+                              value="UX design"
+                              component="input"
+                            />
+                            <label htmlFor="c2"> UX design </label>
                             <span>&#10008;</span>
                             <br />
                           </div>
                           <div class="q-box">
-                            <input
+                            <Field
+                              name="Front-end Development"
                               type="checkbox"
                               id="c3"
                               value="Front-end Development"
+                              component="input"
                             />
-                            <label for="c3"> Front-end Developlemt </label>
+                            <label htmlFor="c3"> Front-end Developlemt </label>
                             <span>&#10008;</span>
                             <br />
                           </div>
                         </section>
-                        <label for="add">Add more:</label>
-                        <input type="text" name="add" id="add" value="" />
+                        <label htmlFor="add">Add more:</label>
+                        <Field
+                          type="text"
+                          name="add"
+                          id="add"
+                          component="input"
+                        />
                         <button
                           id="btn-add"
                           class="btn btn-primary"
@@ -111,54 +129,101 @@ class Skill extends React.Component {
                           </span>{" "}
                         </p>
                         <div class="q-box">
-                          <input type="checkbox" value="texas" id="texas" />
-                          <label for="texas"> Austin, Texas</label>
+                          <Field
+                            name="texas"
+                            type="checkbox"
+                            value="texas"
+                            id="texas"
+                            component="input"
+                          />
+                          <label htmlFor="texas"> Austin, Texas</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="newyork" id="newyork" />
-                          <label for="newyork"> New York, Noew York</label>
+                          <Field
+                            name="newyork"
+                            type="checkbox"
+                            value="newyork"
+                            id="newyork"
+                            component="input"
+                          />
+                          <label htmlFor="newyork"> New York, Noew York</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="toronto" id="toronto" />
-                          <label for="toronto"> Toronto, Canada</label>
+                          <Field
+                            name="toronto"
+                            type="checkbox"
+                            value="toronto"
+                            id="toronto"
+                            component="input"
+                          />
+                          <label htmlFor="toronto"> Toronto, Canada</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="china" id="china" />
-                          <label for="china"> Shanghai, China</label>
+                          <Field
+                            name="china"
+                            type="checkbox"
+                            value="china"
+                            id="china"
+                            component="input"
+                          />
+                          <label htmlFor="china"> Shanghai, China</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="dublin" id="dublin" />
-                          <label for="dublin"> Dubin, Ireland</label>
+                          <Field
+                            name="dublin"
+                            type="checkbox"
+                            value="dublin"
+                            id="dublin"
+                            component="input"
+                          />
+                          <label htmlFor="dublin"> Dubin, Ireland</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="hursley" id="hursley" />
-                          <label for="hursley"> Hursley, United Kingdom </label>
+                          <Field
+                            name="hursley"
+                            type="checkbox"
+                            value="hursley"
+                            id="hursley"
+                            component="input"
+                          />
+                          <label htmlFor="hursley">
+                            {" "}
+                            Hursley, United Kingdom{" "}
+                          </label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input type="checkbox" value="germany" id="germany" />
-                          <label for="germany"> Boeblingen, Germany</label>
+                          <Field
+                            name="germany"
+                            type="checkbox"
+                            value="germany"
+                            id="germany"
+                            component="input"
+                          />
+                          <label htmlFor="germany"> Boeblingen, Germany</label>
                           <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
-                          <input
+                          <Field
+                            name="somewhere"
                             type="checkbox"
                             value="somewhere"
                             id="somewhere"
+                            component="input"
                           />
-                          <label for="somewhere"> Somewhere else </label>
+                          <label htmlFor="somewhere"> Somewhere else </label>
                           <span>&#10008;</span>
                           <br />
                         </div>
@@ -175,4 +240,4 @@ class Skill extends React.Component {
   }
 }
 
-export default Skill;
+export default reduxForm({ form: "skill" })(Skill);
