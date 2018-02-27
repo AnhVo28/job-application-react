@@ -33,7 +33,12 @@ const renderField = ({
   meta: { touched, error, warning }
 }) => (
   <div>
-    <input {...input} placeholder={label} type={type} />
+    <input
+      className={error && touched ? "error" : " "}
+      {...input}
+      placeholder={label}
+      type={type}
+    />
     {touched &&
       ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
@@ -151,6 +156,5 @@ class PersonalForm extends Component {
 
 export default reduxForm({
   form: "personal",
-  validate,
-  asyncBlurFields: ["reEmail"]
+  validate
 })(PersonalForm);

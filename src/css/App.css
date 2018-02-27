@@ -60,9 +60,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input.error {
-  border-bottom: solid 1px salmon;
-  background: url("img/icons8-high-priority-40.png") no-repeat 95% 50%;
-  background-size: 25px;
+  border-bottom: solid 1.5px salmon;
 }
 
 input[type="checkbox"] {

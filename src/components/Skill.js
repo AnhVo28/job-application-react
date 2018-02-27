@@ -69,14 +69,12 @@ class Skill extends React.Component {
                           </p>
                           <div class="q-box">
                             <Field
-                              name="Visual design"
-                              type="checkbox"
+                              name="VisualDesign"
                               id="c1"
-                              value="Visual design"
+                              label="Visual design"
                               component="input"
                             />
                             <label htmlFor="c1"> Visual design</label>
-                            <span>&#10008;</span>
                             <br />
                           </div>
                           <div class="q-box">
@@ -88,7 +86,6 @@ class Skill extends React.Component {
                               component="input"
                             />
                             <label htmlFor="c2"> UX design </label>
-                            <span>&#10008;</span>
                             <br />
                           </div>
                           <div class="q-box">
@@ -100,7 +97,6 @@ class Skill extends React.Component {
                               component="input"
                             />
                             <label htmlFor="c3"> Front-end Developlemt </label>
-                            <span>&#10008;</span>
                             <br />
                           </div>
                         </section>
@@ -126,7 +122,7 @@ class Skill extends React.Component {
                           <span>
                             You must be legally authozied to work without visa
                             sponsorship in the location(s) you choose.
-                          </span>{" "}
+                          </span>
                         </p>
                         <div class="q-box">
                           <Field
@@ -137,7 +133,6 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="texas"> Austin, Texas</label>
-                          <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
@@ -149,7 +144,6 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="newyork"> New York, Noew York</label>
-                          <span>&#10008;</span>
                           <br />
                         </div>
                         <div class="q-box">
@@ -161,7 +155,7 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="toronto"> Toronto, Canada</label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                         <div class="q-box">
@@ -173,7 +167,7 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="china"> Shanghai, China</label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                         <div class="q-box">
@@ -185,7 +179,7 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="dublin"> Dubin, Ireland</label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                         <div class="q-box">
@@ -200,7 +194,7 @@ class Skill extends React.Component {
                             {" "}
                             Hursley, United Kingdom{" "}
                           </label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                         <div class="q-box">
@@ -212,7 +206,7 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="germany"> Boeblingen, Germany</label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                         <div class="q-box">
@@ -224,7 +218,7 @@ class Skill extends React.Component {
                             component="input"
                           />
                           <label htmlFor="somewhere"> Somewhere else </label>
-                          <span>&#10008;</span>
+
                           <br />
                         </div>
                       </div>
