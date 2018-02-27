@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./css/App.css";
+import "./css/App.scss";
 import "./css/bootstrap.min.css";
 import MainPage from "./components/MainPage";
 

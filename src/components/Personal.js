@@ -65,9 +65,8 @@ class PersonalForm extends Component {
                 <Field
                   type="text"
                   name="email"
-                  component="input"
-                  label="Email*"
                   component={renderField}
+                  label="Email*"
                 />
                 <Field
                   type="email"
