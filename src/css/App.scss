@@ -1,6 +1,10 @@
+
+$background-color: #454e57;
+
+
 .App {
   color: white;
-  background: #454e57;
+  background:$background-color;
   min-height: 100vh;
 }
 
@@ -9,31 +13,38 @@
   margin-top: 1.5em;
 }
 
-.Nav li {
-  margin-top: 1em;
-  text-decoration: none;
-  list-style-type: none;
-  display: inline-block;
-}
-
-.Nav li a {
-  color: white;
-  transition: 0.1s ease-out;
-}
-
-.Nav li a:hover {
-  font-size: 1.1em;
-}
-
-.Nav li a.active {
-  font-size: 1.2em;
-  text-decoration: underline;
-}
-
 .Nav {
+
   display: flex;
   justify-content: space-around;
+
+
+  li {
+    margin-top: 1em;
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+
+    a {
+      color: white;
+      transition: 0.1s ease-out;
+    }
+
+    a:hover {
+    font-size: 1.1em;
+    
+    }
+
+    a.active {
+    font-size: 1.2em;
+    text-decoration: underline;
+    }
+  
+  }
+
 }
+
+
 
 .notFound {
   padding-top: 4em;
@@ -57,31 +68,24 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input.error {
-  border-bottom: solid 1px salmon;
-  background: url("img/icons8-high-priority-40.png") no-repeat 95% 50%;
-  background-size: 25px;
+input {
+  &.error {
+  border-bottom: solid 1.5px salmon;
 }
-
-input[type="checkbox"] {
+&[type="checkbox"] {
   background: transparent;
   border: 1px solid #d9d9d9;
   display: inline-block;
   width: auto;
 }
 
-input.done {
-  background: url("img/icons8-checkmark-96.png") no-repeat 95% 50%;
-  background-size: 25px;
-}
-
-input[required]:after {
-  content: "*";
-}
-
-input:focus {
+&:focus {
   outline: none;
 }
+
+
+}
+
 
 .title {
   text-align: left;
@@ -148,29 +152,19 @@ input[type="checkbox"] + label:after {
   transition: 0.15s ease-out;
 }
 
-.q-box span {
+.q-box{
+  span {
   display: none;
   transition: 0.15s ease-out;
   cursor: pointer;
 }
-
-.q-box:hover span {
+&:hover span {
   display: inline-block;
 }
-/* label:hover + span {
-  display: inline-block;
-} */
-/* .job-q span:hover {
-  cursor: pointer;
-  font-size: 24px;
 
-} */
+} 
 
-/* input[type="checkbox"]:hover + label:after {
-  content: " \274c";
-  font-size: 5px;
-  color: red;
-} */
+
 
 input[type="checkbox"]:checked + label:before {
   background: #fff;
@@ -193,3 +187,17 @@ input[type="checkbox"]:focus + label::before {
 }
 
 /* end the button add */
+
+/* Personal form */
+.personal span:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f06a';
+    margin-right: 5px;
+}
+
+/* End personal form */

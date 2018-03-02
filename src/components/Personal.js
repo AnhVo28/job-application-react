@@ -1,219 +1,170 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withFormik } from "formik";
-import validator from "validator";
-
+import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
+import styles from "../css/App.scss";
+import bootstrap from "../css/bootstrap.min.css";
 // Our inner form component which receives our form's state and updater methods as props
-const InnerForm = ({
-  values,
-  errors,
-  touched,
-  handleChange,
-  handleBlur,
-  handleSubmit,
-  isSubmitting,
-  dirty
-}) => (
-  <form class="" action="index.html" method="post">
-    <section class="personal">
-      <div class="container">
-        <h2 class="title">1.Personal information</h2>
-        <div class="row">
-          <div class="col-md-8">
-            <input
-              type="text"
-              name="fullName"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.fullName}
-              placeholder="Full name*"
-              className={errors.fullName && touched.fullName ? "error" : " "}
-            />
-            {touched.fullName &&
-              errors.fullName && <div>{errors.fullName}</div>}
-            <input
-              type="text"
-              name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              placeholder="Email*"
-              className={errors.email && touched.email ? "error" : " "}
-            />
-            {touched.email && errors.email && <div>{errors.email}</div>}
-            <input
-              type="email"
-              name="reEmail"
-              value={values.reEmail}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Re-enter email*"
-              className={errors.reEmail && touched.reEmail ? "error" : " "}
-            />
-            {touched.reEmail && errors.reEmail && <div>{errors.reEmail}</div>}
 
-            <div id="feedback" />
-          </div>
-          <div class="col-md-4">
-            <input
-              type="text"
-              name="phone"
-              value={values.phone}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Enter like this 046541192"
-              className={errors.phone && touched.phone ? "error" : " "}
-            />
-            {touched.phone && errors.phone && <div>{errors.phone}</div>}
-          </div>
-          <div class="col-md-12">
-            <input
-              type="text"
-              name="address"
-              value={values.address}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Address*"
-              className={errors.address && touched.address ? "error" : " "}
-            />
-            {touched.address && errors.address && <div>{errors.address}</div>}
-          </div>
-
-          <div class="col-md-3">
-            <input
-              type="text"
-              name="city"
-              placeholder="City*"
-              value={values.city}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={errors.city && touched.city ? "error" : " "}
-            />
-            {touched.city && errors.city && <div>{errors.city}</div>}
-          </div>
-          <div class="col-md-3">
-            <input
-              type="text"
-              name="state"
-              placeholder="State"
-              value={values.state}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {touched.state && errors.state && <div>{errors.state}</div>}
-          </div>
-          <div class="col-md-3">
-            <input
-              type="text"
-              name="country"
-              placeholder="Country/Region*"
-              value={values.country}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={errors.country && touched.country ? "error" : " "}
-            />
-            {touched.country && errors.country && <div>{errors.country}</div>}
-          </div>
-          <div class="col-md-3">
-            <input
-              type="text"
-              name="zip"
-              placeholder="Zip/Postal code"
-              value={values.zip}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              required
-            />
-          </div>
-
-          <div class="col-md-12">
-            <input
-              type="text"
-              name="hear"
-              value={values.hear}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="How did you hear about us"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12" />
-      </div>
-
-      <button
-        type="submit"
-        disabled={!dirty || isSubmitting}
-        class=" text-left submit btn btn-primary "
-      >
-        Submit
-      </button>
-    </section>
-  </form>
-);
-
-const PersonalForm = withFormik({
-  // Transform outer props into form values
-  mapPropsToValues: props => ({
-    fullName: "",
-    email: "",
-    reEmail: "",
-    phone: "",
-    address: "",
-    city: "",
-    state: "",
-    country: "",
-    zip: "",
-    hear: ""
-  }),
-  // Add a custom validation function (this can be async too!)
-  validate: (values, props) => {
+const validate = values => {
     const errors = {};
-    if (!values.email) {
-      errors.email = "Required";
-    } else if (!validator.isEmail(values.email)) {
-      errors.email = "Invalid email address";
+    const requiredFields = [
+        "fullName",
+        "email",
+        "reEmail",
+        "phone",
+        "city",
+        "zip",
+        "address",
+        "country"
+    ];
+
+    requiredFields.forEach(field => {
+        if (!values[field]) {
+            errors[field] = "Required";
+        }
+    });
+
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = "Invalid email address";
     }
 
     if (values.reEmail !== values.email) {
-      errors.reEmail = "These email don't match. Try again?";
+        errors.reEmail = "These fields should be matched";
+    }
+    if (values.fullName && values.fullName.length > 15) {
+        errors.fullName = "Must be 15 characters or less";
     }
 
-    if (!values.phone) {
-      errors.phone = "Required";
-    } else if (!validator.isMobilePhone(values.phone, "fi-FI")) {
-      errors.phone = "Invalid phone number";
-    }
-
-    if (!values.fullName) {
-      errors.fullName = "Required";
-    } else if (!validator.isAlpha(values.fullName)) {
-      errors.fullName = "It must be the letters";
-    }
-
-    if (!values.address) {
-      errors.address = "Required";
-    }
-    if (!values.city) {
-      errors.city = "Required";
-    }
-    if (!values.country) {
-      errors.country = "Required";
-    }
     return errors;
-  },
-  // Submission handler
-  handleSubmit: (
-    values,
-    {
-      props,
-      setSubmitting,
-      setErrors /* setValues, setStatus, and other goodies */
-    }
-  ) => {
-    console.log(values);
-  }
-})(InnerForm);
+};
 
-export default PersonalForm;
+const renderField = ({
+    input,
+    label,
+    type,
+    meta: { touched, error, warning }
+}) => (
+    <div>
+        <input
+            className={error && touched ? "error" : ""}
+            {...input}
+            placeholder={label}
+            type={type}
+        />
+        {touched &&
+            ((error && <span>{error}</span>) ||
+                (warning && <span>{warning}</span>))}
+    </div>
+);
+
+class PersonalForm extends Component {
+    render() {
+
+        const { handleSubmit, pristine, submitting } = this.props;
+        return (
+            <form onSubmit={handleSubmit}>
+                <section className={styles.personal}>
+                    <div className={bootstrap.container}>
+                        <h2 className={styles.title}>1.Personal information</h2>
+                        <div className={bootstrap.row}>
+                            <div className={bootstrap["col-md-8"]}>
+                                <Field
+                                    name="fullName"
+                                    component={renderField}
+                                    type="text"
+                                    label="Full name*"
+                                />
+                                <Field
+                                    type="text"
+                                    name="email"
+                                    component={renderField}
+                                    label="Email*"
+                                />
+                                <Field
+                                    type="email"
+                                    name="reEmail"
+                                    label="Re-enter email*"
+                                    component={renderField}
+                                />
+                                <div id="feedback" />
+                            </div>
+                            <div className={bootstrap["col-md-4"]}>
+                                <Field
+                                    type="text"
+                                    name="phone"
+                                    label="Enter like this 046541192"
+                                    component={renderField}
+                                />
+                            </div>
+                            <div className={bootstrap["col-md-12"]}>
+                                <Field
+                                    type="text"
+                                    name="address"
+                                    label="Address*"
+                                    component={renderField}
+                                />
+                            </div>
+
+                            <div className={bootstrap["col-md-3"]}>
+                                <Field
+                                    type="text"
+                                    name="city"
+                                    label="City*"
+                                    component={renderField}
+                                />
+                            </div>
+                            <div className={bootstrap["col-md-3"]}>
+                                <Field
+                                    type="text"
+                                    name="state"
+                                    label="State"
+                                    component={renderField}
+                                />
+                            </div>
+                            <div className={bootstrap["col-md-3"]}>
+                                <Field
+                                    type="text"
+                                    name="country"
+                                    label="Country/Region*"
+                                    component={renderField}
+                                />
+                            </div>
+                            <div className={bootstrap["col-md-3"]}>
+                                <Field
+                                    type="text"
+                                    name="zip"
+                                    label="Zip/Postal code"
+                                    component={renderField}
+                                />
+                            </div>
+
+                            <div className={bootstrap["col-md-12"]}>
+                                <Field
+                                    type="text"
+                                    name="hear"
+                                    component="input"
+                                    label="How did you hear about us"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className={bootstrap.row}>
+                        <div className={bootstrap["col-md-12"]} />
+                    </div>
+
+                    <button
+                        disabled={pristine || submitting}
+                        type="submit"
+                        className={`${bootstrap.submit} ${bootstrap["text-left"]} ${bootstrap.btn} ${bootstrap["btn-primary"]}`}
+                    >
+                        Submit
+                    </button>
+                </section>
+            </form>
+        );
+    }
+}
+
+export default reduxForm({
+    form: "personal",
+    validate
+})(PersonalForm);
