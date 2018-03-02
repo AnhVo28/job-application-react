@@ -12,9 +12,6 @@ import {
 
 class App extends Component {
     render() {
-        console.log("styles: ", styles);
-        console.log("bootstrap: ", bootstrap);
-
         return (
             <div className={`${styles.App} ${bootstrap["text-center"]} `}>
                 <Router>

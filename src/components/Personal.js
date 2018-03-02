@@ -58,7 +58,6 @@ const renderField = ({
 
 class PersonalForm extends Component {
     render() {
-        console.log("this.props: ", this.props);
 
         const { handleSubmit, pristine, submitting } = this.props;
         return (
