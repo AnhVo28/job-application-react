@@ -4,6 +4,7 @@ import Personal from "./Personal.js";
 import Skill from "./Skill.js";
 import Portfolio from "./Portfolio";
 import { Route, Switch } from "react-router-dom";
+import styles from "../css/App.scss";
 
 const MainPage = props => {
     return (
@@ -14,8 +15,11 @@ const MainPage = props => {
             <Switch>
                 <Route
                     path={`${props.match.path}/personal/:id`}
-                    render={()=> <Personal onSubmit={values => console.log("values: ", values)} />
-                    }
+                    render={() => (
+                        <Personal
+                            onSubmit={values => console.log("values: ", values)}
+                        />
+                    )}
                 />
                 <Route path={`${props.match.path}/skill`} component={Skill} />
                 <Route
@@ -24,7 +28,9 @@ const MainPage = props => {
                 />
                 <Route
                     path={`${props.match.path}/:id`}
-                    render={() => <h1 className="notFound">Page not found!</h1>}
+                    render={() => (
+                        <h1 className={styles["notFound"]}>Page not found!</h1>
+                    )}
                 />
             </Switch>
         </div>

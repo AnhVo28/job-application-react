@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-
+import styles from "../css/App.scss";
+import bootstrap from "../css/bootstrap.min.css";
 // Our inner form component which receives our form's state and updater methods as props
 
 const validate = values => {
@@ -29,7 +30,7 @@ const validate = values => {
     if (values.reEmail !== values.email) {
         errors.reEmail = "These fields should be matched";
     }
-    if (values.fullName &&values.fullName.length > 15) {
+    if (values.fullName && values.fullName.length > 15) {
         errors.fullName = "Must be 15 characters or less";
     }
 
@@ -62,11 +63,11 @@ class PersonalForm extends Component {
         const { handleSubmit, pristine, submitting } = this.props;
         return (
             <form onSubmit={handleSubmit}>
-                <section className="personal">
-                    <div className="container">
-                        <h2 className="title">1.Personal information</h2>
-                        <div className="row">
-                            <div className="col-md-8">
+                <section className={styles.personal}>
+                    <div className={bootstrap.container}>
+                        <h2 className={styles.title}>1.Personal information</h2>
+                        <div className={bootstrap.row}>
+                            <div className={bootstrap["col-md-8"]}>
                                 <Field
                                     name="fullName"
                                     component={renderField}
@@ -87,7 +88,7 @@ class PersonalForm extends Component {
                                 />
                                 <div id="feedback" />
                             </div>
-                            <div className="col-md-4">
+                            <div className={bootstrap["col-md-4"]}>
                                 <Field
                                     type="text"
                                     name="phone"
@@ -95,7 +96,7 @@ class PersonalForm extends Component {
                                     component={renderField}
                                 />
                             </div>
-                            <div className="col-md-12">
+                            <div className={bootstrap["col-md-12"]}>
                                 <Field
                                     type="text"
                                     name="address"
@@ -104,7 +105,7 @@ class PersonalForm extends Component {
                                 />
                             </div>
 
-                            <div className="col-md-3">
+                            <div className={bootstrap["col-md-3"]}>
                                 <Field
                                     type="text"
                                     name="city"
@@ -112,7 +113,7 @@ class PersonalForm extends Component {
                                     component={renderField}
                                 />
                             </div>
-                            <div className="col-md-3">
+                            <div className={bootstrap["col-md-3"]}>
                                 <Field
                                     type="text"
                                     name="state"
@@ -120,7 +121,7 @@ class PersonalForm extends Component {
                                     component={renderField}
                                 />
                             </div>
-                            <div className="col-md-3">
+                            <div className={bootstrap["col-md-3"]}>
                                 <Field
                                     type="text"
                                     name="country"
@@ -128,7 +129,7 @@ class PersonalForm extends Component {
                                     component={renderField}
                                 />
                             </div>
-                            <div className="col-md-3">
+                            <div className={bootstrap["col-md-3"]}>
                                 <Field
                                     type="text"
                                     name="zip"
@@ -137,7 +138,7 @@ class PersonalForm extends Component {
                                 />
                             </div>
 
-                            <div className="col-md-12">
+                            <div className={bootstrap["col-md-12"]}>
                                 <Field
                                     type="text"
                                     name="hear"
@@ -147,14 +148,14 @@ class PersonalForm extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12" />
+                    <div className={bootstrap.row}>
+                        <div className={bootstrap["col-md-12"]} />
                     </div>
 
                     <button
                         disabled={pristine || submitting}
                         type="submit"
-                        className=" text-left submit btn btn-primary "
+                        className={`${bootstrap.submit} ${bootstrap["text-left"]} ${bootstrap.btn} ${bootstrap["btn-primary"]}`}
                     >
                         Submit
                     </button>

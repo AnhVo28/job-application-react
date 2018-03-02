@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styles from "../css/App.scss";
 
 const Header = props => {
     return (
-        <ul className="Nav">
+        <ul className={styles.Nav}>
             <li>
                 <NavLink exact to="/home">
-          Home
+                    Home
                 </NavLink>
             </li>
             <li>

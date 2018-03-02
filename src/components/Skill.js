@@ -1,18 +1,22 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import styles from "../css/App.scss";
+import bootstrap from "../css/bootstrap.min.css";
 
 class Skill extends React.Component {
     render() {
         return (
             <form method="post">
-                <section class="skill">
-                    <section class="role">
-                        <div class="container">
-                            <h2 class="title">2. Skills and location</h2>
-                            <p class="text-left">Which is your primary design discipline</p>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="job-box">
+                <section className={styles.skill}>
+                    <section className={styles["role"]}>
+                        <div className={bootstrap["container"]}>
+                            <h2 className={styles["title"]}>2. Skills and location</h2>
+                            <p className={bootstrap["text-left"]}>
+                                Which is your primary design discipline
+                            </p>
+                            <div className={bootstrap["row"]}>
+                                <div className={bootstrap["col-md-3"]}>
+                                    <div className={styles["job-box"]}>
                                         <Field
                                             type="radio"
                                             name="design-discipline"
@@ -20,11 +24,13 @@ class Skill extends React.Component {
                                             id="design-research"
                                             component="input"
                                         />
-                                        <label htmlFor="design-research">Design Research</label>
+                                        <label htmlFor="design-research">
+                                            Design Research
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="job-box">
+                                <div className={bootstrap["col-md-3"]}>
+                                    <div className={styles["job-box"]}>
                                         <Field
                                             type="radio"
                                             name="design-discipline"
@@ -32,11 +38,13 @@ class Skill extends React.Component {
                                             value="Visual Design"
                                             component="input"
                                         />
-                                        <label htmlFor="visual-design">Visual Design</label>
+                                        <label htmlFor="visual-design">
+                                            Visual Design
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="job-box">
+                                <div className={bootstrap["col-md-3"]}>
+                                    <div className={styles["job-box"]}>
                                         <Field
                                             type="radio"
                                             name="design-discipline"
@@ -44,11 +52,13 @@ class Skill extends React.Component {
                                             value="UX Design"
                                             component="input"
                                         />
-                                        <label htmlFor="ux-design">UX Design</label>
+                                        <label htmlFor="ux-design">
+                                            UX Design
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="job-box">
+                                <div className={bootstrap["col-md-3"]}>
+                                    <div className={styles["job-box"]}>
                                         <Field
                                             type="radio"
                                             name="design-discipline"
@@ -56,28 +66,38 @@ class Skill extends React.Component {
                                             value="Front End Dev"
                                             component="input"
                                         />
-                                        <label htmlFor="front-end">Front End Dev</label>
+                                        <label htmlFor="front-end">
+                                            Front End Dev
+                                        </label>
                                     </div>
                                 </div>
-                                <section class="question">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-6 skill text-left">
-                                                <section class="job-q" id="job-skill">
+                                <section className={styles["question"]}>
+                                    <div className={bootstrap["container"]}>
+                                        <div className={bootstrap["row"]}>
+                                            <div className={`${bootstrap["col-md-6"]} ${styles.skill} ${bootstrap["text-left"]}`}>
+                                                <section
+                                                    className={styles["job-q"]}
+                                                    id="job-skill"
+                                                >
                                                     <p>
-                            Do you have experience with any other discipline?
+                                                        Do you have experience
+                                                        with any other
+                                                        discipline?
                                                     </p>
-                                                    <div class="q-box">
+                                                    <div className={styles["q-box"]}>
                                                         <Field
                                                             name="VisualDesign"
                                                             id="c1"
                                                             label="Visual design"
                                                             component="input"
                                                         />
-                                                        <label htmlFor="c1"> Visual design</label>
+                                                        <label htmlFor="c1">
+                                                            {" "}
+                                                            Visual design
+                                                        </label>
                                                         <br />
                                                     </div>
-                                                    <div class="q-box">
+                                                    <div className={styles["q-box"]}>
                                                         <Field
                                                             name="UX design"
                                                             type="checkbox"
@@ -85,10 +105,13 @@ class Skill extends React.Component {
                                                             value="UX design"
                                                             component="input"
                                                         />
-                                                        <label htmlFor="c2"> UX design </label>
+                                                        <label htmlFor="c2">
+                                                            {" "}
+                                                            UX design{" "}
+                                                        </label>
                                                         <br />
                                                     </div>
-                                                    <div class="q-box">
+                                                    <div className={styles["q-box"]}>
                                                         <Field
                                                             name="Front-end Development"
                                                             type="checkbox"
@@ -96,11 +119,17 @@ class Skill extends React.Component {
                                                             value="Front-end Development"
                                                             component="input"
                                                         />
-                                                        <label htmlFor="c3"> Front-end Developlemt </label>
+                                                        <label htmlFor="c3">
+                                                            {" "}
+                                                            Front-end
+                                                            Developlemt{" "}
+                                                        </label>
                                                         <br />
                                                     </div>
                                                 </section>
-                                                <label htmlFor="add">Add more:</label>
+                                                <label htmlFor="add">
+                                                    Add more:
+                                                </label>
                                                 <Field
                                                     type="text"
                                                     name="add"
@@ -109,22 +138,26 @@ class Skill extends React.Component {
                                                 />
                                                 <button
                                                     id="btn-add"
-                                                    class="btn btn-primary"
+                                                    className={`${bootstrap["btn"]} ${bootstrap["btn-primary"]}`}
                                                     type="button"
                                                     name="button"
                                                 >
-                          Add
+                                                    Add
                                                 </button>
                                             </div>
-                                            <div class="col-md-6 job-q text-left">
+                                            <div className= {`${bootstrap["col-md-6"]} ${bootstrap["text-left"]} ${styles["job-q"]}`}>
                                                 <p>
-                          Where are you interested in working?*{" "}
+                                                    Where are you interested in
+                                                    working?*{" "}
                                                     <span>
-                            You must be legally authozied to work without visa
-                            sponsorship in the location(s) you choose.
+                                                        You must be legally
+                                                        authozied to work
+                                                        without visa sponsorship
+                                                        in the location(s) you
+                                                        choose.
                                                     </span>
                                                 </p>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="texas"
                                                         type="checkbox"
@@ -132,10 +165,13 @@ class Skill extends React.Component {
                                                         id="texas"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="texas"> Austin, Texas</label>
+                                                    <label htmlFor="texas">
+                                                        {" "}
+                                                        Austin, Texas
+                                                    </label>
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="newyork"
                                                         type="checkbox"
@@ -143,10 +179,13 @@ class Skill extends React.Component {
                                                         id="newyork"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="newyork"> New York, Noew York</label>
+                                                    <label htmlFor="newyork">
+                                                        {" "}
+                                                        New York, Noew York
+                                                    </label>
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="toronto"
                                                         type="checkbox"
@@ -154,11 +193,14 @@ class Skill extends React.Component {
                                                         id="toronto"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="toronto"> Toronto, Canada</label>
+                                                    <label htmlFor="toronto">
+                                                        {" "}
+                                                        Toronto, Canada
+                                                    </label>
 
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="china"
                                                         type="checkbox"
@@ -166,11 +208,14 @@ class Skill extends React.Component {
                                                         id="china"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="china"> Shanghai, China</label>
+                                                    <label htmlFor="china">
+                                                        {" "}
+                                                        Shanghai, China
+                                                    </label>
 
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="dublin"
                                                         type="checkbox"
@@ -178,11 +223,14 @@ class Skill extends React.Component {
                                                         id="dublin"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="dublin"> Dubin, Ireland</label>
+                                                    <label htmlFor="dublin">
+                                                        {" "}
+                                                        Dubin, Ireland
+                                                    </label>
 
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="hursley"
                                                         type="checkbox"
@@ -192,12 +240,12 @@ class Skill extends React.Component {
                                                     />
                                                     <label htmlFor="hursley">
                                                         {" "}
-                            Hursley, United Kingdom{" "}
+                                                        Hursley, United Kingdom{" "}
                                                     </label>
 
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="germany"
                                                         type="checkbox"
@@ -205,11 +253,14 @@ class Skill extends React.Component {
                                                         id="germany"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="germany"> Boeblingen, Germany</label>
+                                                    <label htmlFor="germany">
+                                                        {" "}
+                                                        Boeblingen, Germany
+                                                    </label>
 
                                                     <br />
                                                 </div>
-                                                <div class="q-box">
+                                                <div className={styles["q-box"]}>
                                                     <Field
                                                         name="somewhere"
                                                         type="checkbox"
@@ -217,7 +268,10 @@ class Skill extends React.Component {
                                                         id="somewhere"
                                                         component="input"
                                                     />
-                                                    <label htmlFor="somewhere"> Somewhere else </label>
+                                                    <label htmlFor="somewhere">
+                                                        {" "}
+                                                        Somewhere else{" "}
+                                                    </label>
 
                                                     <br />
                                                 </div>
