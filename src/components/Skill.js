@@ -2,17 +2,21 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
+import { translate } from "react-i18next";
 
 class Skill extends React.Component {
     render() {
+        const { t } = this.props;
         return (
             <form method="post">
                 <section className={styles.skill}>
                     <section className={styles["role"]}>
                         <div className={bootstrap["container"]}>
-                            <h2 className={styles["title"]}>2. Skills and location</h2>
+                            <h2 className={styles["title"]}>
+                                2. {t("skill.title")}
+                            </h2>
                             <p className={bootstrap["text-left"]}>
-                                Which is your primary design discipline
+                                {t("skill.design-discipline")}
                             </p>
                             <div className={bootstrap["row"]}>
                                 <div className={bootstrap["col-md-3"]}>
@@ -25,7 +29,7 @@ class Skill extends React.Component {
                                             component="input"
                                         />
                                         <label htmlFor="design-research">
-                                            Design Research
+                                            {t("skill.design-research")}
                                         </label>
                                     </div>
                                 </div>
@@ -39,7 +43,7 @@ class Skill extends React.Component {
                                             component="input"
                                         />
                                         <label htmlFor="visual-design">
-                                            Visual Design
+                                            {t("skill.visual-design")}
                                         </label>
                                     </div>
                                 </div>
@@ -53,7 +57,7 @@ class Skill extends React.Component {
                                             component="input"
                                         />
                                         <label htmlFor="ux-design">
-                                            UX Design
+                                            {t("skill.ux-design")}
                                         </label>
                                     </div>
                                 </div>
@@ -74,17 +78,27 @@ class Skill extends React.Component {
                                 <section className={styles["question"]}>
                                     <div className={bootstrap["container"]}>
                                         <div className={bootstrap["row"]}>
-                                            <div className={`${bootstrap["col-md-6"]} ${styles.skill} ${bootstrap["text-left"]}`}>
+                                            <div
+                                                className={`${
+                                                    bootstrap["col-md-6"]
+                                                } ${styles.skill} ${
+                                                    bootstrap["text-left"]
+                                                }`}
+                                            >
                                                 <section
                                                     className={styles["job-q"]}
                                                     id="job-skill"
                                                 >
                                                     <p>
-                                                        Do you have experience
-                                                        with any other
-                                                        discipline?
+                                                        {t(
+                                                            "skill.other-discipline"
+                                                        )}
                                                     </p>
-                                                    <div className={styles["q-box"]}>
+                                                    <div
+                                                        className={
+                                                            styles["q-box"]
+                                                        }
+                                                    >
                                                         <Field
                                                             name="VisualDesign"
                                                             id="c1"
@@ -93,11 +107,17 @@ class Skill extends React.Component {
                                                         />
                                                         <label htmlFor="c1">
                                                             {" "}
-                                                            Visual design
+                                                            {t(
+                                                                "skill.design-research"
+                                                            )}
                                                         </label>
                                                         <br />
                                                     </div>
-                                                    <div className={styles["q-box"]}>
+                                                    <div
+                                                        className={
+                                                            styles["q-box"]
+                                                        }
+                                                    >
                                                         <Field
                                                             name="UX design"
                                                             type="checkbox"
@@ -107,11 +127,17 @@ class Skill extends React.Component {
                                                         />
                                                         <label htmlFor="c2">
                                                             {" "}
-                                                            UX design{" "}
+                                                            {t(
+                                                                "skill.ux-design"
+                                                            )}{" "}
                                                         </label>
                                                         <br />
                                                     </div>
-                                                    <div className={styles["q-box"]}>
+                                                    <div
+                                                        className={
+                                                            styles["q-box"]
+                                                        }
+                                                    >
                                                         <Field
                                                             name="Front-end Development"
                                                             type="checkbox"
@@ -128,7 +154,7 @@ class Skill extends React.Component {
                                                     </div>
                                                 </section>
                                                 <label htmlFor="add">
-                                                    Add more:
+                                                    {t("skill.more")}
                                                 </label>
                                                 <Field
                                                     type="text"
@@ -138,26 +164,31 @@ class Skill extends React.Component {
                                                 />
                                                 <button
                                                     id="btn-add"
-                                                    className={`${bootstrap["btn"]} ${bootstrap["btn-primary"]}`}
+                                                    className={`${
+                                                        bootstrap["btn"]
+                                                    } ${
+                                                        bootstrap["btn-primary"]
+                                                    }`}
                                                     type="button"
                                                     name="button"
                                                 >
-                                                    Add
+                                                    {t("add")}
                                                 </button>
                                             </div>
-                                            <div className= {`${bootstrap["col-md-6"]} ${bootstrap["text-left"]} ${styles["job-q"]}`}>
+                                            <div
+                                                className={`${
+                                                    bootstrap["col-md-6"]
+                                                } ${bootstrap["text-left"]} ${
+                                                    styles["job-q"]
+                                                }`}
+                                            >
                                                 <p>
-                                                    Where are you interested in
-                                                    working?*{" "}
-                                                    <span>
-                                                        You must be legally
-                                                        authozied to work
-                                                        without visa sponsorship
-                                                        in the location(s) you
-                                                        choose.
-                                                    </span>
+                                                    {t("skill.where-interest")}{" "}
+                                                    
                                                 </p>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="texas"
                                                         type="checkbox"
@@ -171,7 +202,9 @@ class Skill extends React.Component {
                                                     </label>
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="newyork"
                                                         type="checkbox"
@@ -185,7 +218,9 @@ class Skill extends React.Component {
                                                     </label>
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="toronto"
                                                         type="checkbox"
@@ -200,7 +235,9 @@ class Skill extends React.Component {
 
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="china"
                                                         type="checkbox"
@@ -215,7 +252,9 @@ class Skill extends React.Component {
 
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="dublin"
                                                         type="checkbox"
@@ -230,7 +269,9 @@ class Skill extends React.Component {
 
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="hursley"
                                                         type="checkbox"
@@ -245,7 +286,9 @@ class Skill extends React.Component {
 
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="germany"
                                                         type="checkbox"
@@ -260,7 +303,9 @@ class Skill extends React.Component {
 
                                                     <br />
                                                 </div>
-                                                <div className={styles["q-box"]}>
+                                                <div
+                                                    className={styles["q-box"]}
+                                                >
                                                     <Field
                                                         name="somewhere"
                                                         type="checkbox"
@@ -270,7 +315,7 @@ class Skill extends React.Component {
                                                     />
                                                     <label htmlFor="somewhere">
                                                         {" "}
-                                                        Somewhere else{" "}
+                                                        {t("skill.somewhere-else")}{" "}
                                                     </label>
 
                                                     <br />
@@ -288,4 +333,4 @@ class Skill extends React.Component {
     }
 }
 
-export default reduxForm({ form: "skill" })(Skill);
+export default translate()(reduxForm({ form: "skill" })(Skill));

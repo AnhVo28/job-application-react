@@ -1,0 +1,102 @@
+{
+    "en": {
+        "translation": {
+            "key": "hello world",
+            "nav-personal": "Personal information",
+            "nav-skill": "Skills",
+            "nav-portfolio": "Portfolio",
+            "add": "Add",
+            "submit": "Submit",
+            "mainPage": {
+                "talk": "Let's talk",
+                "think": "Think you have what it takes? Show us."
+            },
+            "personal": {
+                "title": "Personal Information",
+                "label": {
+                    "fullName": "Full name",
+                    "phone": "Enter like this 046541192",
+                    "email": "Email*",
+                    "reEmail": "Re-enter the email",
+                    "address": "Address",
+                    "city": "City",
+                    "state": "State",
+                    "country": "Country*",
+                    "zip": "Zip/Postal code",
+                    "hear": "How did you hear about us"
+                }
+            },
+            "skill": {
+                "title": "Skills and location",
+                "design-discipline": "Which is your primary design discipline",
+                "design-research": "Design Research",
+                "visual-design": "Visual Design",
+                "ux-design": "UX Design",
+                "other-discipline":
+                    "Do you have experience with any other discipline?",
+                "more": "And more:",
+                "where-interest":
+                    "Where are you interested in working?* You must be legally authozied to work without visa sponsorship in the location(s) you choose.",
+                "somewhere-else": "Somewhere else"
+            },
+            "portfolio": {
+                "title": "Portfolio",
+                "prove":
+                    "Prove you're IBM's next great designer by showing us who you are. What you've have done. How you think. Tell us your story.",
+                "link": "Portfolio link*",
+                "text-area": "Anything else (another link, availability, etc.)"
+            }
+        }
+    },
+    "fi": {
+        "translation": {
+            "key": "hello welt",
+            "nav-personal": "Henkilökohtaisia tietoja",
+            "nav-skill": "Taito",
+            "nav-portfolio": "Salkku",
+            "add": "Lisätä",
+            "submit": "Lähetä",
+            "mainPage": {
+                "talk": "Puhutaan",
+                "think":
+                    "Luuletko, että sinulla on mitä tarvitset? Näytä meille."
+            },
+            "personal": {
+                "title": "Henkilökohtaisia tietoja",
+                "label": {
+                    "fullName": "Koko nimi",
+                    "phone": "Kirjoita näin 046541192",
+                    "email": "Sähköposti*",
+                    "reEmail": "Anna sähköposti uudelleen",
+                    "address": "Osoite",
+                    "city": "Kaupunki",
+                    "state": "Osavaltio",
+                    "country": "Maa*",
+                    "zip": "Postinumero",
+                    "hear": "Kuinka kuulit meistä"
+                }
+            },
+            "skill": {
+                "title": "Taidot ja sijainti",
+                "design-discipline":
+                    "Mikä on sinun ensisijainen suunnittelutyö",
+                "design-research": "Suunnittelututkimus",
+                "visual-design": "Visuaalinen suunnittelija",
+                "ux-design": "UX suunnittelija",
+                "other-discipline":
+                    "Onko sinulla kokemusta mistä tahansa muusta kurinalaisuudesta?",
+                "more": "Ja enemmän:",
+                "where-interest":
+                    "Missä olet kiinnostunut työskentelemästä? * Sinulla on oltava laillisesti oikeus työskennellä ilman viisumin sponsorointia valitsemillasi paikoilla.",
+                "somewhere-else": "Jossain muualla"
+            },
+            "portfolio": {
+                "title": "Salkku",
+                "prove":
+                    "Todista, että olet IBM: n seuraava loistava suunnittelija, osoittamalla meille kuka olet. Mitä olet tehnyt. Miten ajattelet. Kerro meille tarinasi.",
+                "link": "Portfolio-linkki*",
+                "text-area": "Kaikki muu (toinen linkki, saatavuus jne.)"
+            }
+        }
+    }
+}

@@ -2,23 +2,25 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
+import { translate } from "react-i18next";
 
 class Portfolio extends React.Component {
     render() {
+        const { t } = this.props;
         return (
-            <form class="" method="post">
-                <section class={styles["portfolio"]}>
-                    <div class={bootstrap["container"]}>
-                        <h2 class={styles["title"]}>3. Portfolio</h2>
-                        <p class={bootstrap["text-left"]}>
-                            Prove you're IBM's next great designer by showing us
-                            who you are. What you've have done. How you think.
-                            Tell us your story.
+            <form className="" method="post">
+                <section className={styles["portfolio"]}>
+                    <div className={bootstrap["container"]}>
+                        <h2 className={styles["title"]}>
+                            3. {t("portfolio.title")}
+                        </h2>
+                        <p className={bootstrap["text-left"]}>
+                            {t("portfolio.prove")}
                         </p>
                         <Field
                             type="link"
-                            class="port"
-                            placeholder="Portfolio link*"
+                            className="port"
+                            placeholder={t("portfolio.link")}
                             name="link"
                             component="input"
                         />
@@ -26,7 +28,7 @@ class Portfolio extends React.Component {
                             name="comment"
                             cols="15"
                             rows="5"
-                            placeholder="Anything else (another link, availability, etc.)"
+                            placeholder={t("portfolio.text-area")}
                             component="textarea"
                         />
                         <button
@@ -34,7 +36,7 @@ class Portfolio extends React.Component {
                                 bootstrap["text-left"]
                             } ${bootstrap.btn} ${bootstrap["btn-primary"]}`}
                         >
-                            Submit
+                            {t("submit")}
                         </button>
                     </div>
                 </section>
@@ -43,4 +45,4 @@ class Portfolio extends React.Component {
     }
 }
 
-export default reduxForm({ form: "porfolio" })(Portfolio);
+export default translate()(reduxForm({ form: "porfolio" })(Portfolio));

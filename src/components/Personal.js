@@ -3,6 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
 // Our inner form component which receives our form's state and updater methods as props
+import { translate } from "react-i18next";
 
 const validate = values => {
     const errors = {};
@@ -58,31 +59,32 @@ const renderField = ({
 
 class PersonalForm extends Component {
     render() {
-
-        const { handleSubmit, pristine, submitting } = this.props;
+        const { handleSubmit, pristine, submitting, t } = this.props;
         return (
             <form onSubmit={handleSubmit}>
                 <section className={styles.personal}>
                     <div className={bootstrap.container}>
-                        <h2 className={styles.title}>1.Personal information</h2>
+                        <h2 className={styles.title}>
+                            1. {t("personal.title")}
+                        </h2>
                         <div className={bootstrap.row}>
                             <div className={bootstrap["col-md-8"]}>
                                 <Field
                                     name="fullName"
                                     component={renderField}
                                     type="text"
-                                    label="Full name*"
+                                    label={t("personal.label.fullName")}
                                 />
                                 <Field
                                     type="text"
                                     name="email"
                                     component={renderField}
-                                    label="Email*"
+                                    label={t("personal.label.email")}
                                 />
                                 <Field
                                     type="email"
                                     name="reEmail"
-                                    label="Re-enter email*"
+                                    label={t("personal.label.reEmail")}
                                     component={renderField}
                                 />
                                 <div id="feedback" />
@@ -91,7 +93,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="phone"
-                                    label="Enter like this 046541192"
+                                    label={t("personal.label.phone")}
                                     component={renderField}
                                 />
                             </div>
@@ -99,7 +101,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="address"
-                                    label="Address*"
+                                    label={t("personal.label.address")}
                                     component={renderField}
                                 />
                             </div>
@@ -108,7 +110,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="city"
-                                    label="City*"
+                                    label={t("personal.label.city")}
                                     component={renderField}
                                 />
                             </div>
@@ -116,7 +118,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="state"
-                                    label="State"
+                                    label={t("personal.label.state")}
                                     component={renderField}
                                 />
                             </div>
@@ -124,7 +126,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="country"
-                                    label="Country/Region*"
+                                    label={t("personal.label.country")}
                                     component={renderField}
                                 />
                             </div>
@@ -132,7 +134,7 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="zip"
-                                    label="Zip/Postal code"
+                                    label={t("personal.label.zip")}
                                     component={renderField}
                                 />
                             </div>
@@ -141,8 +143,8 @@ class PersonalForm extends Component {
                                 <Field
                                     type="text"
                                     name="hear"
-                                    component="input"
-                                    label="How did you hear about us"
+                                    label={t("personal.label.hear")}
+                                    component={renderField}
                                 />
                             </div>
                         </div>
@@ -154,9 +156,11 @@ class PersonalForm extends Component {
                     <button
                         disabled={pristine || submitting}
                         type="submit"
-                        className={`${bootstrap.submit} ${bootstrap["text-left"]} ${bootstrap.btn} ${bootstrap["btn-primary"]}`}
+                        className={`${bootstrap.submit} ${
+                            bootstrap["text-left"]
+                        } ${bootstrap.btn} ${bootstrap["btn-primary"]}`}
                     >
-                        Submit
+                        {t("submit")}
                     </button>
                 </section>
             </form>
@@ -164,7 +168,9 @@ class PersonalForm extends Component {
     }
 }
 
-export default reduxForm({
-    form: "personal",
-    validate
-})(PersonalForm);
+export default translate()(
+    reduxForm({
+        form: "personal",
+        validate
+    })(PersonalForm)
+);
