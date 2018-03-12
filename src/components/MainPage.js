@@ -5,13 +5,15 @@ import Skill from "./Skill.js";
 import Portfolio from "./Portfolio";
 import { Route, Switch } from "react-router-dom";
 import styles from "../css/App.scss";
+import { translate } from "react-i18next";
 
 const MainPage = props => {
+    const { t } = props;
     return (
         <div>
             <Header />
-            <h1>Let's talk</h1>
-            <p>Think you have what it takes? Show us.</p>
+            <h1>{t("mainPage.talk")}</h1>
+            <p>{t("mainPage.think")}</p>
             <Switch>
                 <Route
                     path={`${props.match.path}/personal/:id`}
@@ -37,4 +39,4 @@ const MainPage = props => {
     );
 };
 
-export default MainPage;
+export default translate()(MainPage);
