@@ -1,10 +1,13 @@
+// @flow
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
 import { translate } from "react-i18next";
+import type { TFunction } from "react-i18next";
 
-class Skill extends React.Component {
+
+class Skill extends React.Component<TFunction> {
     render() {
         const { t } = this.props;
         return (
@@ -184,7 +187,6 @@ class Skill extends React.Component {
                                             >
                                                 <p>
                                                     {t("skill.where-interest")}{" "}
-                                                    
                                                 </p>
                                                 <div
                                                     className={styles["q-box"]}
@@ -315,7 +317,9 @@ class Skill extends React.Component {
                                                     />
                                                     <label htmlFor="somewhere">
                                                         {" "}
-                                                        {t("skill.somewhere-else")}{" "}
+                                                        {t(
+                                                            "skill.somewhere-else"
+                                                        )}{" "}
                                                     </label>
 
                                                     <br />
