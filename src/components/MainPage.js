@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import Header from "./Header";
 import Personal from "./Personal.js";
@@ -6,9 +7,17 @@ import Portfolio from "./Portfolio";
 import { Route, Switch } from "react-router-dom";
 import styles from "../css/App.scss";
 import { translate } from "react-i18next";
+import type { TFunction } from "react-i18next";
 
-const MainPage = props => {
+type Props = {
+    t: TFunction,
+    match: Object
+}
+
+const MainPage = (props: Props) => {
     const { t } = props;
+
+    
     return (
         <div>
             <Header />

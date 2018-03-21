@@ -1,6 +1,9 @@
 {
     
-    "extends": "react-app",
+    "extends": [
+        "react-app",
+        "plugin:flowtype/recommended"
+    ],
     
     "plugins": [
         "react"

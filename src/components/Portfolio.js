@@ -1,10 +1,12 @@
+// @flow
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
 import { translate } from "react-i18next";
+import type { TFunction } from "react-i18next";
 
-class Portfolio extends React.Component {
+class Portfolio extends React.Component<TFunction> {
     render() {
         const { t } = this.props;
         return (

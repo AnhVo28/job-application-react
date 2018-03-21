@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react";
 import styles from "./css/App.scss";
 import bootstrap from "./css/bootstrap.min.css";
@@ -10,7 +11,7 @@ import {
     Switch
 } from "react-router-dom";
 
-class App extends Component {
+class App extends Component<{}> {
     render() {
         return (
             <div className={`${styles.App} ${bootstrap["text-center"]} `}>

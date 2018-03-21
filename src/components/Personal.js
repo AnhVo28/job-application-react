@@ -1,9 +1,21 @@
+// @flow
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "../css/App.scss";
 import bootstrap from "../css/bootstrap.min.css";
 // Our inner form component which receives our form's state and updater methods as props
 import { translate } from "react-i18next";
+import type { TFunction } from "react-i18next";
+import type { FormProps, FieldProps } from "redux-form";
+
+type Props = {
+    t: TFunction
+} & FormProps;
+
+type FinalFieldProps = {
+    label: string,
+    type: string
+} & FieldProps;
 
 const validate = values => {
     const errors = {};
@@ -38,12 +50,12 @@ const validate = values => {
     return errors;
 };
 
-const renderField = ({
+const renderField:Object = ({
     input,
     label,
     type,
     meta: { touched, error, warning }
-}) => (
+}: FinalFieldProps) => (
     <div>
         <input
             className={error && touched ? "error" : ""}
@@ -57,7 +69,7 @@ const renderField = ({
     </div>
 );
 
-class PersonalForm extends Component {
+class PersonalForm extends Component<Props> {
     render() {
         const { handleSubmit, pristine, submitting, t } = this.props;
         return (
