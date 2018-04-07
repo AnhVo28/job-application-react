@@ -1,6 +1,7 @@
-# Project Title
+# Job Application with translation feature
 
-Job Application with React, Redux, Redux-form, SASS, Flow.
+Job Application with React, Redux, Redux-form, SASS, Flow and Globalization.
+
 
 [Demo verson. Click here!](https://anhvo-job-app.surge.sh/)
 
@@ -90,7 +91,7 @@ It automatically deploys the app and show it in the browser as [http://localhost
 * [Redux](https://redux.js.org/) - State management
 * [Redux-form](https://redux-form.com/7.2.3/) - State management for form
 * [SASS](https://sass-lang.com/) - CSS extension language
-
+* [I18next](https://www.i18next.com/) - Library for translating language
 
 ## Authors
 
